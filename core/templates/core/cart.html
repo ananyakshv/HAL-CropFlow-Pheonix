@@ -1,0 +1,266 @@
+{% load i18n %}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{% trans 'Your Cart' %}</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            color: #ffffff;
+            background: linear-gradient(135deg, #1e3c72, #2a5298);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        h1, h3 {
+            color: #ffffff;
+            text-align: center;
+            text-shadow: 2px 2px 4px #000000;
+            animation: fadeIn 2s ease-in;
+        }
+
+        a {
+            display: inline-block;
+            padding: 10px 20px;
+            background: linear-gradient(45deg, #ff416c, #ff4b2b);
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        a:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        table {
+            width: 90%;
+            margin: 20px auto;
+            border-collapse: collapse;
+            background-color: rgba(255, 255, 255, 0.95);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+            animation: slideIn 1s ease-out;
+        }
+
+        th, td {
+            padding: 15px;
+            border: 1px solid #ddd;
+            text-align: center;
+            color: #333;
+        }
+
+        th {
+            background: linear-gradient(45deg, #6a11cb, #2575fc);
+            color: #fff;
+        }
+
+        tr:nth-child(even) {
+            background-color: rgba(240, 240, 240, 0.8);
+        }
+
+        tr:hover {
+            background-color: rgba(200, 200, 255, 0.7);
+            transform: scale(1.02);
+            transition: transform 0.2s;
+        }
+
+        button {
+            padding: 10px 20px;
+            background: linear-gradient(45deg, #ff416c, #ff4b2b);
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s;
+        }
+
+        button:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        .delete-button {
+            padding: 10px 15px;
+            background: linear-gradient(45deg, #e74c3c, #c0392b);
+            color: #ffffff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+        }
+
+        .delete-button:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        #message-box {
+            color: #32cd32;
+            margin: 20px 0;
+            text-align: center;
+            font-size: 1.2em;
+            animation: pulse 1.5s infinite;
+        }
+
+        .error-message {
+            color: #ff4d4d;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        form {
+            max-width: 600px;
+            margin: auto;
+            text-align: left;
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+            animation: zoomIn 1s ease;
+        }
+
+        label {
+            display: block;
+            margin: 10px 0;
+            color: #333;
+            font-weight: bold;
+        }
+
+        input[type="radio"] {
+            margin-right: 10px;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes slideIn {
+            from { transform: translateY(-50px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+
+        @keyframes zoomIn {
+            from { transform: scale(0.8); opacity: 0; }
+            to { transform: scale(1); opacity: 1; }
+        }
+
+        @media (max-width: 768px) {
+            table, th, td {
+                font-size: 14px;
+            }
+
+            button, a {
+                padding: 8px 16px;
+                font-size: 14px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>Your Cart</h1>
+    <p style="text-align: center;">
+        <a href="{% url 'customer_dashboard' %}">{% trans 'Back to Dashboard' %}</a>
+    </p>
+
+    {% if cart_items %}
+        <table>
+            <thead>
+                <tr>
+                    <th>{% trans 'Crop' %}</th>
+                    <th>{% trans 'Quantity' %}</th>
+                    <th>{% trans 'Price (₹/kg)' %}</th>
+                    <th>{% trans 'Total (₹)' %}</th>
+                    <th>{% trans 'Action' %}</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for item in cart_items %}
+                <tr>
+                    <td>{{ item.crop.crop_name }}</td>
+                    <td>{{ item.quantity_requested }} kg</td>
+                    <td>{{ item.crop.price_per_kg|floatformat:2 }}</td>
+                    <td>{{ item.total_price|floatformat:2 }}</td>
+                    <td>
+                        <form method="POST" action="{% url 'delete_from_cart' item.id %}" style="display: inline-block; margin: 0; padding: 0; border: none;">
+                            {% csrf_token %}
+                            <button type="submit" class="delete-button">{% trans 'Delete' %}</button>
+                        </form>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+
+        <p style="text-align: center;"><strong>{% trans 'Total Price' %}:</strong> ₹{{ total_price|floatformat:2 }}</p>
+
+        <form method="POST" action="{% url 'checkout' %}" onsubmit="return validateForm()">
+            {% csrf_token %}
+            <h3 style="text-align: center;">{% trans 'Select Delivery Option:' %}</h3>
+            <div style="margin: 20px auto; padding: 20px; background: linear-gradient(135deg, #a1c4fd, #c2e9fb); border-radius: 10px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);">
+                <label>
+                    <input type="radio" name="delivery_option" value="direct_contact" 
+                        onclick="showMessage(this)" 
+                        data-message="{% trans 'Please contact the farmer directly to complete the purchase.' %}">
+                    {% trans 'Contact the farmer and pay directly' %}
+                </label>
+                
+                <label>
+                    <input type="radio" name="delivery_option" value="online_payment" 
+                        onclick="showMessage(this)" 
+                        data-message="{% trans 'You have selected online payment. Proceed to checkout to complete the payment.' %}">
+                    {% trans 'Pay online via farmer\'s contact number' %}
+                </label>
+                
+            </div>
+
+            <div id="message-box"></div>
+            <div id="error-message" class="error-message"></div>
+
+            <div style="text-align: center;">
+                <button type="submit">{% trans 'Proceed to Checkout' %}</button>
+            </div>
+        </form>
+    {% else %}
+        <p style="text-align: center;">{% trans 'Your cart is empty.' %}</p>
+    {% endif %}
+
+    <script>
+        function showMessage(element) {
+    const messageBox = document.getElementById('message-box');
+    messageBox.textContent = element.getAttribute('data-message');
+
+    // Clear any previous error message
+    const errorMessage = document.getElementById('error-message');
+    errorMessage.textContent = "";
+}
+
+
+        function validateForm() {
+            const deliveryOption = document.querySelector('input[name="delivery_option"]:checked');
+            const errorMessage = document.getElementById('error-message');
+
+            if (!deliveryOption) {
+                errorMessage.textContent = "{% trans 'Please select a delivery option before proceeding.' %}";
+                return false;
+            }
+
+            return true;
+        }
+    </script>
+</body>
+</html>

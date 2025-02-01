@@ -1,0 +1,257 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-01-05 20:15+0530\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: ml\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: .\core\templates\core\add_to_cart.html:6
+#: .\core\templates\core\add_to_cart.html:197
+#: .\core\templates\core\add_to_cart.html:208
+#: .\core\templates\core\customer_dashboard.html:190
+msgid "Add to Cart"
+msgstr "कार्ट में जोड़ें"
+
+msgid "Please enter a valid quantity."
+msgstr "कृपया एक वैध मात्रा दर्ज करें"
+
+msgid "Back to Dashboard"
+msgstr "डैशबोर्ड पर वापस जाएं"
+
+msgid "Price per kg"
+msgstr "प्रति किलोग्राम कीमत (₹)"
+
+msgid "Available Quantity"
+msgstr "उपलब्ध मात्रा"
+
+msgid "Quantity (kg):"
+msgstr "मात्रा (किलोग्राम):"
+
+msgid "View Cart"
+msgstr "कार्ट देखें"
+
+msgid "Crop"
+msgstr "फसल"
+
+msgid "Quantity"
+msgstr "मात्रा"
+
+msgid "Price (₹/kg)"
+msgstr "कीमत (₹/किलोग्राम)"
+
+msgid "Total (₹)"
+msgstr "कुल (₹)"
+
+msgid "Select Delivery Option:"
+msgstr "डिलीवरी विकल्प चुनें:"
+
+msgid "Please contact the farmer directly to complete the purchase."
+msgstr "खरीदी को पूरा करने के लिए कृपया सीधे किसान से संपर्क करें।"
+
+msgid "Contact the farmer and pay directly"
+msgstr "किसान से संपर्क करें और सीधे भुगतान करें"
+
+msgid "You have selected online payment. Proceed to checkout to complete the payment."
+msgstr "आपने ऑनलाइन भुगतान चुना है। भुगतान पूरा करने के लिए चेकआउट पर जाएं।"
+
+msgid "Pay online via farmer's contact number"
+msgstr "किसान के संपर्क नंबर के माध्यम से ऑनलाइन भुगतान करें"
+
+msgid "Proceed to Checkout"
+msgstr "चेकआउट पर जाएं"
+
+msgid "Your cart is empty."
+msgstr "आपकी कार्ट खाली है।"
+
+msgid "Please select a delivery option before proceeding."
+msgstr "कृपया आगे बढ़ने से पहले एक डिलीवरी विकल्प चुनें।"
+
+msgid "Your Cart"
+msgstr "आपकी कार्ट"
+
+msgid "Logout"
+msgstr "लॉगआउट"
+
+msgid "Available Crops:"
+msgstr "उपलब्ध फसलें:"
+
+msgid "Crop Name"
+msgstr "फसल का नाम"
+
+msgid "Farmer Name"
+msgstr "किसान का नाम"
+
+msgid "Farmer Contact"
+msgstr "किसान का संपर्क"
+
+msgid "Farmer Location"
+msgstr "किसान का स्थान"
+
+msgid "Price per kg (₹)"
+msgstr "प्रति किलोग्राम कीमत (₹)"
+
+msgid "Quantity Available"
+msgstr "उपलब्ध मात्रा"
+
+msgid "No crops available."
+msgstr "कोई फसल उपलब्ध नहीं है।"
+
+msgid "Customer Login"
+msgstr "ग्राहक लॉगिन"
+
+msgid "Username:"
+msgstr "उपयोगकर्ता नाम:"
+
+msgid "Password:"
+msgstr "पासवर्ड:"
+
+msgid "Login"
+msgstr "लॉगिन"
+
+msgid "Don't have an account?"
+msgstr "क्या आपका खाता नहीं है?"
+
+msgid "Sign Up"
+msgstr "साइन अप"
+
+msgid "Customer Signup"
+msgstr "ग्राहक साइन अप"
+
+msgid "Online Payment"
+msgstr "ऑनलाइन भुगतान"
+
+msgid "Thank You for Supporting Farmers!"
+msgstr "किसानों का समर्थन करने के लिए धन्यवाद!"
+
+msgid "Your purchase directly contributes to improving farmers' livelihoods."
+msgstr "आपकी खरीद सीधे किसानों की आजीविका को सुधारने में योगदान करती है।"
+
+msgid "Contact Farmer"
+msgstr "किसान से संपर्क करें"
+
+msgid "Name:"
+msgstr "नाम:"
+
+msgid "Phone:"
+msgstr "फोन"
+
+msgid "City:"
+msgstr "शहर"
+
+msgid "State:"
+msgstr "राज्य"
+
+msgid "Total Price:"
+msgstr "कुल कीमत"
+
+msgid "Please proceed with the payment using the farmer's contact number above."
+msgstr "कृपया ऊपर दिए गए किसान के संपर्क नंबर का उपयोग करके भुगतान जारी रखें।"
+
+msgid "Details not available at the moment."
+msgstr "वर्तमान में विवरण उपलब्ध नहीं हैं।"
+
+msgid "Proceed"
+msgstr "जारी रखें"
+
+msgid "Payment Successful!"
+msgstr "भुगतान सफल!"
+
+msgid "Your payment has been received. Thank you for your support!"
+msgstr "आपका भुगतान प्राप्त हो गया है। आपके समर्थन के लिए धन्यवाद!"
+
+msgid "Close"
+msgstr "बंद करें"
+
+msgid "Farmer Dashboard"
+msgstr "किसान डैशबोर्ड"
+
+msgid "Crop Details"
+msgstr "फसल विवरण"
+
+msgid "Quantity (kg)"
+msgstr "मात्रा (किग्रा.)"
+
+msgid "Seeds Cost (₹)"
+msgstr "बीज की लागत (₹)"
+
+msgid "Fertilizers Cost (₹)"
+msgstr "उर्वरकों की लागत (₹)"
+
+msgid "Pesticides Cost (₹)"
+msgstr "कीटनाशकों की लागत (₹)"
+
+msgid "Machinery/Fuel Cost (₹)"
+msgstr "मशीनरी/ईंधन की लागत (₹)"
+
+msgid "Family/Unpaid Labor Cost (₹)"
+msgstr "परिवार/अवेतन श्रम की लागत (₹)"
+
+msgid "Farmer Details"
+msgstr "किसान विवरण"
+
+msgid "Contact Number"
+msgstr "संपर्क नंबर"
+
+msgid "State"
+msgstr "राज्य"
+
+msgid "City"
+msgstr "शहर"
+
+msgid "Add Crop"
+msgstr "फसल जोड़ें"
+
+msgid "Added Crops"
+msgstr "जोड़ दी गई फसलें"
+
+msgid "MSP (₹)"
+msgstr "MSP (₹)"
+
+msgid "Farmer Login"
+msgstr "किसान लॉगिन"
+
+msgid "Username"
+msgstr "उपयोगकर्ता नाम"
+
+msgid "Sign up here"
+msgstr "यहां साइन अप करें"
+
+msgid "Farmer Signup"
+msgstr "किसान साइन अप"
+
+msgid "Confirm Password"
+msgstr "पासवर्ड की पुष्टि करें"
+
+msgid "Already have an account?"
+msgstr "क्या आपका खाता पहले से है?"
+
+msgid "Login here"
+msgstr "यहां लॉगिन करें"
+
+msgid "Welcome to AGRI-DIRECT"
+msgstr "AGRI-DIRECT में आपका स्वागत है"
+
+msgid "Are you a Farmer or a Customer?"
+msgstr "क्या आप किसान हैं या ग्राहक?"
+
+msgid "Farmer"
+msgstr "किसान"
+
+msgid "Customer"
+msgstr "ग्राहक"
+
+msgid "Proceed with Payment"
+msgstr "भुगतान के साथ आगे बढ़ें"

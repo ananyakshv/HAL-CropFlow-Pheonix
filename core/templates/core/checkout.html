@@ -1,0 +1,27 @@
+<!-- checkout.html -->
+{% load i18n %}
+
+<h2>{% trans "Checkout" %}</h2>
+
+<form method="post">
+    {% csrf_token %}
+    
+    <h3>{% trans "Choose a checkout method:" %}</h3>
+    
+    <input type="radio" id="meet_farmer" name="checkout_method" value="meet_farmer" required>
+    <label for="meet_farmer">{% trans "Meet the farmer and collect crops directly" %}</label><br>
+
+    <input type="radio" id="online_payment" name="checkout_method" value="online_payment">
+    <label for="online_payment">{% trans "Pay online to farmer's contact number and arrange transportation" %}</label><br>
+
+    <input type="hidden" name="cart_id" value="{{ cart.id }}">
+
+    <button type="submit">{% trans "Confirm Checkout" %}</button>
+</form>
+
+<h3>{% trans "Your Cart:" %}</h3>
+<ul>
+    {% for item in cart_items %}
+        <li>{{ item.crop_name }} - {{ item.quantity_requested }} kg - ₹{{ item.total_price }}</li>
+    {% endfor %}
+</ul>

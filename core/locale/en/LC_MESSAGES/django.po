@@ -1,0 +1,257 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-01-05 20:15+0530\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: ml\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: .\core\templates\core\add_to_cart.html:6
+#: .\core\templates\core\add_to_cart.html:197
+#: .\core\templates\core\add_to_cart.html:208
+#: .\core\templates\core\customer_dashboard.html:190
+msgid "Add to Cart"
+msgstr "Add to Cart"
+
+msgid "Please enter a valid quantity."
+msgstr "Please enter a valid quantity."
+
+msgid "Back to Dashboard"
+msgstr "Back to Dashboard"
+
+msgid "Price per kg"
+msgstr "Price per kg (₹)"
+
+msgid "Available Quantity"
+msgstr "Available Quantity"
+
+msgid "Quantity (kg):"
+msgstr "Quantity (kg):"
+
+msgid "View Cart"
+msgstr "View Cart"
+
+msgid "Crop"
+msgstr "Crop"
+
+msgid "Quantity"
+msgstr "Quantity"
+
+msgid "Price (₹/kg)"
+msgstr "Price (₹/kg)"
+
+msgid "Total (₹)"
+msgstr "Total (₹)"
+
+msgid "Select Delivery Option:"
+msgstr "Select Delivery Option:"
+
+msgid "Please contact the farmer directly to complete the purchase."
+msgstr "Please contact the farmer directly to complete the purchase."
+
+msgid "Contact the farmer and pay directly"
+msgstr "Contact the farmer and pay directly"
+
+msgid "You have selected online payment. Proceed to checkout to complete the payment."
+msgstr "You have selected online payment. Proceed to checkout to complete the payment."
+
+msgid "Pay online via farmer's contact number"
+msgstr "Pay online via farmer's contact number"
+
+msgid "Proceed to Checkout"
+msgstr "Proceed to Checkout"
+
+msgid "Your cart is empty."
+msgstr "Your cart is empty."
+
+msgid "Please select a delivery option before proceeding."
+msgstr "Please select a delivery option before proceeding."
+
+msgid "Your Cart"
+msgstr "Your Cart"
+
+msgid "Logout"
+msgstr "Logout"
+
+msgid "Available Crops:"
+msgstr "Available Crops:"
+
+msgid "Crop Name"
+msgstr "Crop Name"
+
+msgid "Farmer Name"
+msgstr "Farmer Name"
+
+msgid "Farmer Contact"
+msgstr "Farmer Contact"
+
+msgid "Farmer Location"
+msgstr "Farmer Location"
+
+msgid "Price per kg (₹)"
+msgstr "Price per kg (₹)"
+
+msgid "Quantity Available"
+msgstr "Quantity Available"
+
+msgid "No crops available."
+msgstr "No crops available."
+
+msgid "Customer Login"
+msgstr "Customer Login"
+
+msgid "Username:"
+msgstr "Username:"
+
+msgid "Password:"
+msgstr "Password:"
+
+msgid "Login"
+msgstr "Login"
+
+msgid "Don't have an account?"
+msgstr "Don't have an account?"
+
+msgid "Sign Up"
+msgstr "Sign Up"
+
+msgid "Customer Signup"
+msgstr "Customer Signup"
+
+msgid "Online Payment"
+msgstr "Online Payment"
+
+msgid "Thank You for Supporting Farmers!"
+msgstr "Thank You for Supporting Farmers!"
+
+msgid "Your purchase directly contributes to improving farmers' livelihoods."
+msgstr "Your purchase directly contributes to improving farmers' livelihoods."
+
+msgid "Contact Farmer"
+msgstr "Contact Farmer"
+
+msgid "Name:"
+msgstr "Name:"
+
+msgid "Phone:"
+msgstr "Phone"
+
+msgid "City:"
+msgstr "City"
+
+msgid "State:"
+msgstr "State"
+
+msgid "Total Price:"
+msgstr "Total Price"
+
+msgid "Please proceed with the payment using the farmer's contact number above."
+msgstr "Please proceed with the payment using the farmer's contact number above."
+
+msgid "Details not available at the moment."
+msgstr "Details not available at the moment."
+
+msgid "Proceed"
+msgstr "Proceed"
+
+msgid "Payment Successful!"
+msgstr "Payment Successful!"
+
+msgid "Your payment has been received. Thank you for your support!"
+msgstr "Your payment has been received. Thank you for your support!"
+
+msgid "Close"
+msgstr "Close"
+
+msgid "Farmer Dashboard"
+msgstr "Farmer Dashboard"
+
+msgid "Crop Details"
+msgstr "Crop Details"
+
+msgid "Quantity (kg)"
+msgstr "Quantity (kg)"
+
+msgid "Seeds Cost (₹)"
+msgstr "Seeds Cost (₹)"
+
+msgid "Fertilizers Cost (₹)"
+msgstr "Fertilizers Cost (₹)"
+
+msgid "Pesticides Cost (₹)"
+msgstr "Pesticides Cost (₹)"
+
+msgid "Machinery/Fuel Cost (₹)"
+msgstr "Machinery/Fuel Cost (₹)"
+
+msgid "Family/Unpaid Labor Cost (₹)"
+msgstr "Family/Unpaid Labor Cost (₹)"
+
+msgid "Farmer Details"
+msgstr "Farmer Details"
+
+msgid "Contact Number"
+msgstr "Contact Number"
+
+msgid "State"
+msgstr "State"
+
+msgid "City"
+msgstr "City"
+
+msgid "Add Crop"
+msgstr "Add Crop"
+
+msgid "Added Crops"
+msgstr "Added Crops"
+
+msgid "MSP (₹)"
+msgstr "MSP (₹)"
+
+msgid "Farmer Login"
+msgstr "Farmer Login"
+
+msgid "Username"
+msgstr "Username"
+
+msgid "Sign up here"
+msgstr "Sign up here"
+
+msgid "Farmer Signup"
+msgstr "Farmer Signup"
+
+msgid "Confirm Password"
+msgstr "Confirm Password"
+
+msgid "Already have an account?"
+msgstr "Already have an account?"
+
+msgid "Login here"
+msgstr "Login here"
+
+msgid "Welcome to AGRI-DIRECT"
+msgstr "Welcome to AGRI-DIRECT"
+
+msgid "Are you a Farmer or a Customer?"
+msgstr "Are you a Farmer or a Customer?"
+
+msgid "Farmer"
+msgstr "Farmer"
+
+msgid "Customer"
+msgstr "Customer"
+
+msgid "Proceed with Payment"
+msgstr "Proceed with Payment"

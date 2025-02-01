@@ -1,0 +1,278 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-01-05 20:15+0530\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: ml\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: .\core\templates\core\add_to_cart.html:6
+#: .\core\templates\core\add_to_cart.html:197
+#: .\core\templates\core\add_to_cart.html:208
+#: .\core\templates\core\customer_dashboard.html:190
+msgid "Add to Cart"
+msgstr "కార్టులో చేర్చండి"
+
+msgid "Please enter a valid quantity."
+msgstr "దయచేసి సరైన పరిమాణాన్ని నమోదు చేయండి"
+
+msgid "Back to Dashboard"
+msgstr "డాష్‌బోర్డ్‌కు వెనక్కి వెళ్ళండి"
+
+msgid "Price per kg"
+msgstr "కిలోకు ధర (₹)"
+
+msgid "Available Quantity"
+msgstr "లభ్యమై ఉన్న పరిమాణం"
+
+msgid "Quantity (kg):"
+msgstr "పరిమాణం (కిలో):"
+
+msgid "View Cart"
+msgstr "కార్టును చూడండి"
+
+msgid "Crop"
+msgstr "పంట"
+
+msgid "Quantity"
+msgstr "పరిమాణం"
+
+msgid "Price (₹/kg)"
+msgstr "ధర (₹/కిలో)"
+
+msgid "Total (₹)"
+msgstr "మొత్తం (₹)"
+
+msgid "Select Delivery Option:"
+msgstr "డెలివరీ ఎంపికను ఎంచుకోండి:"
+
+msgid "Please contact the farmer directly to complete the purchase."
+msgstr "కొనుగోలు పూర్తి చేయడానికి నేరుగా రైతును సంప్రదించండి."
+
+msgid "Contact the farmer and pay directly"
+msgstr "రైతును సంప్రదించి నేరుగా చెల్లించండి"
+
+msgid "You have selected online payment. Proceed to checkout to complete the payment."
+msgstr "మీరు ఆన్‌లైన్ చెల్లింపును ఎంచుకున్నారు. చెల్లింపును పూర్తి చేయడానికి చెకౌట్‌కు కొనసాగండి."
+
+msgid "Pay online via farmer's contact number"
+msgstr "రైతు సంప్రదింపు సంఖ్య ద్వారా ఆన్‌లైన్ చెల్లింపు చేయండి"
+
+msgid "Proceed to Checkout"
+msgstr "చెకౌట్‌కు కొనసాగండి"
+
+msgid "Your cart is empty."
+msgstr "మీ కార్ట్ ఖాళీగా ఉంది"
+
+msgid "Please select a delivery option before proceeding."
+msgstr "దయచేసి కొనసాగడానికి ముందు డెలివరీ ఎంపికను ఎంచుకోండి."
+
+msgid "Your Cart"
+msgstr "మీ కార్ట్"
+
+msgid "Logout"
+msgstr "లాగ్ అవుట్"
+
+#: .\core\templates\core\customer_dashboard.html:168
+msgid "Available Crops:"
+msgstr "అందుబాటులో ఉన్న పంటలు"
+
+msgid "Crop Name"
+msgstr "పంట పేరు"
+
+msgid "Farmer Name"
+msgstr "రైతు పేరు"
+
+msgid "Farmer Contact"
+msgstr "రైతు సంబంధ వివరాలు"
+
+msgid "Farmer Location"
+msgstr "రైతు స్థానిక వివరాలు"
+
+msgid "Price per kg (₹)"
+msgstr "ప్రతి కిలో ధర (₹)"
+
+msgid "Quantity Available"
+msgstr "అందుబాటులో ఉన్న పరిమాణం"
+
+msgid "No crops available."
+msgstr "పంటలు అందుబాటులో లేవు"
+
+msgid "Customer Login"
+msgstr "వినియోగదారు లాగిన్"
+
+msgid "Username:"
+msgstr "వినియోగదారు పేరు:"
+
+msgid "Password:"
+msgstr "పాస్వర్డ్:"
+
+msgid "Login"
+msgstr "లాగిన్"
+
+msgid "Don't have an account?"
+msgstr "మీకు అకౌంట్ లేదు?"
+
+msgid "Sign Up"
+msgstr "సైన్ అప్"
+
+msgid "Customer Signup"
+msgstr "వినియోగదారు సైన్ అప్"
+
+msgid "Online Payment"
+msgstr "ఆన్‌లైన్ చెల్లింపు"
+
+msgid "Thank You for Supporting Farmers!"
+msgstr "రైతులను మద్దతు ఇస్తున్నందుకు ధన్యవాదాలు!"
+
+msgid "Your purchase directly contributes to improving farmers' livelihoods."
+msgstr "మీ కొనుగోలు నేరుగా రైతుల జీవనోపాధిని మెరుగుపరచడంలో సహాయపడుతుంది."
+
+msgid "Contact Farmer"
+msgstr "రైతుని సంప్రదించండి"
+
+msgid "Name:"
+msgstr "పేరు:"
+
+#: .\core\templates\core\direct_contact.html:256
+#: .\core\templates\core\online_payment.html:252
+msgid "Phone:"  
+msgstr "ఫోన్"  
+
+msgid "City:"  
+msgstr "నగరం"  
+
+msgid "State:"  
+msgstr "రాష్ట్రం"  
+
+msgid "Total Price:"  
+msgstr "మొత్తం ధర"  
+
+msgid "Please proceed with the payment using the farmer's contact number above."  
+msgstr "దయచేసి పై రైతు సంప్రదింపు సంఖ్యను ఉపయోగించి చెల్లింపును కొనసాగించండి."  
+
+msgid "Details not available at the moment."  
+msgstr "ప్రస్తుతం వివరాలు అందుబాటులో లేవు."  
+
+msgid "Proceed"  
+msgstr "కొనసాగించండి"  
+
+msgid "Payment Successful!"  
+msgstr "చెల్లింపు విజయవంతం!"  
+
+msgid "Your payment has been received. Thank you for your support!"  
+msgstr "మీ చెల్లింపును స్వీకరించాం. మీ మద్దతుకు ధన్యవాదాలు!"  
+
+msgid "Close"  
+msgstr "మూసివేయండి"  
+
+msgid "Farmer Dashboard"  
+msgstr "రైతు డ్యాష్‌బోర్డ్"  
+
+msgid "Crop Details"  
+msgstr "పంట వివరాలు"  
+
+msgid "Quantity (kg)"  
+msgstr "పరిమాణం (kg)"  
+
+msgid "Seeds Cost (₹)"  
+msgstr "విత్తనాల ఖర్చు (₹)"  
+
+msgid "Fertilizers Cost (₹)"  
+msgstr "ఎరువుల ఖర్చు (₹)"  
+
+msgid "Pesticides Cost (₹)"  
+msgstr "పెస్టిసైడ్ల ఖర్చు (₹)"  
+
+msgid "Machinery/Fuel Cost (₹)"  
+msgstr "యంత్రాలు/ఇంధన ఖర్చు (₹)"  
+
+msgid "Family/Unpaid Labor Cost (₹)"  
+msgstr "కుటుంబ/చెల్లింపులేని కార్మిక ఖర్చు (₹)"  
+
+msgid "Farmer Details"  
+msgstr "రైతు వివరాలు"  
+
+msgid "Contact Number"  
+msgstr "సంప్రదింపు సంఖ్య"  
+
+msgid "State"  
+msgstr "రాష్ట్రం"  
+
+msgid "City"  
+msgstr "నగరం"  
+
+msgid "Add Crop"
+msgstr "పంటను చేర్చండి"
+
+msgid "Added Crops"
+msgstr "చేర్చిన పంటలు"
+
+msgid "MSP (₹)"
+msgstr "MSP (₹)"
+
+msgid "Farmer Login"
+msgstr "వ్యవసాయదారు లాగిన్"
+
+msgid "Username"
+msgstr "వినియోగదారుని పేరు"
+
+msgid "Sign up here"
+msgstr "ఇక్కడ సైన్ అప్ చేయండి"
+
+msgid "Farmer Signup"
+msgstr "వ్యవసాయదారుని నమోదు"
+
+msgid "Confirm Password"
+msgstr "పాస్‌వర్డ్‌ను నిర్ధారించండి"
+
+msgid "Already have an account?"
+msgstr "మీకు ఇప్పటికే ఖాతా ఉందా?"
+
+msgid "Login here"
+msgstr "ఇక్కడ లాగిన్ చేయండి"
+
+msgid "Welcome to AGRI-DIRECT"
+msgstr "AGRI-DIRECT కు స్వాగతం"
+
+msgid "Are you a Farmer or a Customer?"
+msgstr "మీరు వ్యవసాయదారునా లేదా కస్టమరా?"
+
+msgid "Farmer"
+msgstr "వ్యవసాయదారు"
+
+msgid "Customer"
+msgstr "కస్టమర్"
+
+msgid "Proceed with Payment"
+msgstr "చెల్లింపుతో కొనసాగండి"
+
+#~ msgid "English"
+#~ msgstr "ఆంగ్లం"
+
+#~ msgid "Hindi"
+#~ msgstr "హిందీ"
+
+#~ msgid "Kannada"
+#~ msgstr "కన్నడ"
+
+#~ msgid "Tamil"
+#~ msgstr "తమిళం"
+
+#~ msgid "Malayalam"
+#~ msgstr "మలయాళం"
+
+#~ msgid "Telugu"
+#~ msgstr "తెలుగు"

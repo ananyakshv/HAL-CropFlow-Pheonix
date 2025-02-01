@@ -1,0 +1,170 @@
+{% load i18n %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% trans "Farmer Signup" %}</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-image: url('https://images.pexels.com/photos/6985001/pexels-photo-6985001.jpeg?cs=srgb&dl=pexels-codioful-6985001.jpg&fm=jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed; /* Fixed background on scroll */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            color: #333;
+        }
+
+        h1 {
+            color: black;
+            margin-bottom: 30px;
+            font-size: 36px;
+        }
+
+        form {
+            background: rgba(255, 255, 255, 0.4); /* Semi-transparent form container */
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+            width: 100%;
+            max-width: 450px;
+            text-align: center;
+        }
+
+        input {
+            width: 100%;
+            padding: 12px;
+            margin: 12px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+            background: rgba(255, 255, 255, 0.8); /* Lighter background for input fields */
+        }
+
+        button {
+            width: 100%;
+            padding: 12px;
+            background: #000; /* Black button color */
+            color: white;
+            font-size: 16px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        button:hover {
+            background: #333; /* Darker black on hover */
+        }
+
+        p {
+            margin-top: 20px;
+            font-size: 14px;
+        }
+
+        a {
+            color: #0056b3;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 600px) {
+            form {
+                padding: 20px;
+            }
+
+            input, button {
+                font-size: 14px;
+            }
+        }
+
+        /* Modal Styles */
+        .modal {
+            display: none; /* Hidden by default */
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.4); /* Black background with opacity */
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal-content {
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            text-align: center;
+            position: relative;
+            animation: fadeIn 0.5s ease-in-out;
+        }
+
+        .modal h3 {
+            color: black;
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        /* Fade-in animation for the modal */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+    </style>
+</head>
+<body>
+    <h1>{% trans "Farmer Signup" %}</h1>
+    <form method="post">
+        {% csrf_token %}
+        <input type="text" name="username" placeholder="{% trans 'Username' %}" required>
+        <input type="password" name="password" placeholder="{% trans 'Password' %}" required>
+        <input type="password" name="confirm_password" placeholder="{% trans 'Confirm Password' %}" required>
+        
+        <button type="submit">{% trans "Sign Up" %}</button>
+    </form>
+    <p>{% trans "Already have an account?" %} <a href="/farmer/login/">{% trans "Login here" %}</a></p>
+
+    <!-- Modal -->
+    <div id="congratulationsModal" class="modal">
+        <div class="modal-content">
+            <h3>{% trans "Congratulations, Account Created!" %}</h3>
+            <p>{% trans "Welcome aboard! Your account has been successfully created." %}</p>
+        </div>
+    </div>
+
+    <script>
+        // Handle form submission
+        document.getElementById('signup-form').addEventListener('submit', function(event) {
+            event.preventDefault();  // Prevent form submission for demonstration
+
+            // Show the modal
+            document.getElementById('congratulationsModal').style.display = 'flex';
+
+            // Hide the modal after 3 seconds
+            setTimeout(function() {
+                document.getElementById('congratulationsModal').style.display = 'none';
+            }, 3000);
+        });
+
+        // Close the modal if clicked outside
+        window.onclick = function(event) {
+            if (event.target === document.getElementById('congratulationsModal')) {
+                document.getElementById('congratulationsModal').style.display = 'none';
+            }
+        };
+    </script>
+</body>
+</html>

@@ -1,0 +1,320 @@
+{% load i18n %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% trans "Online Payment" %}</title>
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+
+    <style>
+        /* Global Styles */
+        body {
+            font-family: 'Open Sans', sans-serif;
+            margin: 0;
+            padding: 0;
+            color: #fff;
+            box-sizing: border-box;
+            background-image: url("https://png.pngtree.com/thumb_back/fw800/background/20240511/pngtree-beautiful-barn-farm-background-image_15728996.jpg");
+            background-size: cover;
+            background-position: center center;
+            background-attachment: fixed;
+            height: 100%;
+            overflow-x: hidden;
+        }
+
+        h1, h2, p {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        /* Thank You Message */
+        .thank-you {
+            margin-top: 20px;
+            padding: 20px;
+            background-color: rgba(252, 228, 236, 0.9);
+            color: black;
+            border: 1px solid #ebd8de;
+            border-radius: 8px;
+            font-size: 18px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(10px);
+        }
+
+        .thank-you h2 {
+            font-size: 26px;
+            font-weight: 600;
+        }
+
+        .thank-you p {
+            font-size: 16px;
+        }
+
+        /* Button Container */
+        .button-container {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+            gap: 20px;
+        }
+
+        .button-container a {
+            background-color: #508651;
+            color: white;
+            padding: 12px 30px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 18px;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        .button-container a:hover {
+            background-color: #81c784;
+            transform: scale(1.05);
+        }
+
+        /* Payment Details */
+        .payment-details {
+            background-color: rgba(252, 228, 236, 0.9);
+            color: black;
+            margin: 30px auto;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            width: 80%;
+            max-width: 700px;
+            font-size: 18px;
+            text-align: left;
+        }
+
+        .payment-details p {
+            font-size: 16px;
+            line-height: 1.6;
+        }
+
+        .payment-details strong {
+            color: #80e27e;
+        }
+
+        .payment-details .total-price {
+            font-size: 22px;
+            color: black;
+            font-weight: bold;
+        }
+
+        .payment-details button {
+            background-color: #436879;
+            color: white;
+            padding: 12px 30px;
+            font-size: 18px;
+            border-radius: 5px;
+            border: none;
+            width: 100%;
+            margin-top: 20px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        .payment-details button:hover {
+            background-color: #4fc3f7;
+            transform: scale(1.05);
+        }
+
+        /* Modal for Payment Success */
+        .popup {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: #ffffff;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+            max-width: 500px;
+            text-align: center;
+            z-index: 9999;
+            opacity: 0;
+            transition: opacity 0.5s ease;
+            border: 2px solid #80e27e;
+        }
+
+        .popup.success {
+            background-color: #f9fbe7;
+            color: #2e7d32;
+        }
+
+        .popup h3 {
+            font-size: 24px;
+            font-weight: 600;
+        }
+
+        .popup p {
+            font-size: 18px;
+            margin: 10px 0;
+        }
+
+        .popup .close-btn {
+            background-color: #2e7d32;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 18px;
+            transition: background-color 0.3s ease;
+        }
+
+        .popup .close-btn:hover {
+            background-color: #1b5e20;
+        }
+
+        .party-popper {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 50px;
+            display: none;
+            animation: partyPopper 1s ease-out;
+            z-index: 9999;
+        }
+
+        @keyframes partyPopper {
+            0% {
+                transform: translate(-50%, -50%) scale(1);
+                opacity: 1;
+            }
+
+            50% {
+                transform: translate(-50%, -50%) scale(1.5);
+                opacity: 0.7;
+            }
+
+            100% {
+                transform: translate(-50%, -50%) scale(1);
+                opacity: 0;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .payment-details {
+                width: 90%;
+                padding: 15px;
+            }
+
+            .thank-you h2 {
+                font-size: 22px;
+            }
+
+            .thank-you p {
+                font-size: 14px;
+            }
+
+            .button-container a {
+                font-size: 16px;
+                padding: 10px 20px;
+            }
+
+            .popup h3 {
+                font-size: 22px;
+            }
+
+            .popup p {
+                font-size: 16px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Thank You Message -->
+    <div class="thank-you">
+        <h2>{% trans "Thank You for Supporting Farmers!" %}</h2>
+        <p>{% trans "Your purchase directly contributes to improving farmers' livelihoods." %}</p>
+    </div>
+
+    <!-- Navigation Buttons -->
+    <div class="button-container">
+        <a href="{% url 'customer_dashboard' %}">{% trans "Back to Dashboard" %}</a>
+        <a href="{% url 'farmer_logout' %}">{% trans "Logout" %}</a>
+    </div>
+
+    <!-- Payment Details Section -->
+    <div class="payment-details">
+        <h1>{% trans "Online Payment" %}</h1>
+
+        {% if farmer_details %}
+        <p><strong>{% trans "Name:" %}</strong> {{ farmer_details.name }}</p>
+        <p><strong>{% trans "Phone:" %}</strong> {{ farmer_details.phone }}</p>
+        <p><strong>{% trans "City:" %}</strong> {{ farmer_details.city }}</p>
+        <p><strong>{% trans "State:" %}</strong> {{ farmer_details.state }}</p>
+        <p class="total-price">{% trans "Total Price:" %} ₹{{ total_price|floatformat:2 }}</p>
+        <p>{% trans "Please proceed with the payment using the farmer's contact number above." %}</p>
+        {% else %}
+        <p>{% trans "Details not available at the moment." %}</p>
+        {% endif %}
+
+        <!-- Proceed with Payment Button -->
+        <button onclick="showPopup('success')">{% trans "Proceed with Payment" %}</button>
+    </div>
+
+    <!-- Success Modal -->
+    <div class="popup success" id="successPopup">
+        <h3>{% trans "Payment Successful!" %}</h3>
+        <p>{% trans "Your payment has been received. Thank you for your support!" %}</p>
+        <button class="close-btn" onclick="closePopup()">{% trans "Close" %}</button>
+    </div>
+
+    <!-- Party Popper -->
+    <div class="party-popper" id="partyPopper">🎉🎉🎉</div>
+
+    <!-- JavaScript for Popups -->
+    <script>
+        // Function to display the pop-up
+        function showPopup(type) {
+            // Determine which popup to show (success or error)
+            var popup = (type === 'success') ? document.getElementById('successPopup') : null;
+            if (popup) {
+                popup.style.display = "block";
+                popup.style.opacity = "1";  // Fade-in effect
+            }
+
+            document.body.style.overflow = "hidden";  // Disable scrolling when modal is open
+
+            // Show Party Popper animation for success
+            if (type === 'success') {
+                var partyPopper = document.getElementById('partyPopper');
+                partyPopper.style.display = "block";  // Show the party popper
+                setTimeout(function () {
+                    partyPopper.style.display = "none";  // Hide after animation
+                }, 2000); // Hide after 2 seconds
+            }
+        }
+
+        // Function to close the pop-up
+        function closePopup() {
+            var successPopup = document.getElementById('successPopup');
+            if (successPopup) {
+                successPopup.style.display = "none";
+            }
+            document.body.style.overflow = "auto";  // Enable scrolling again
+        }
+
+        // Close the popup if clicked outside the modal
+        window.onclick = function (event) {
+            var successPopup = document.getElementById('successPopup');
+            if (event.target === successPopup) {
+                closePopup();
+            }
+        }
+    </script>
+
+</body>
+
+</html>

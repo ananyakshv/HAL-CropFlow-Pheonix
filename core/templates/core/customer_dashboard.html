@@ -1,0 +1,198 @@
+{% load static %}
+{% load i18n %}
+
+<style>
+    /* General styling for the page */
+    body {
+        font-family: 'Arial', sans-serif;
+        background: url("{% static 'images/market.jpg' %}") no-repeat center center fixed;
+        background-size: cover; /* Ensures the background covers the entire page */
+        margin: 0;
+        padding: 20px;
+        color: #333;
+    }
+
+    h2 {
+        color: #34495e;
+        font-size: 28px;
+        margin-bottom: 20px;
+        text-align: center;
+    }
+
+    /* Styling for the cart icon and count */
+    .cart-icon {
+        position: relative;
+        display: inline-block;
+    }
+
+    .cart-count {
+        position: absolute;
+        top: -5px;
+        right: -5px;
+        background-color: #e74c3c;
+        color: white;
+        border-radius: 50%;
+        padding: 4px;
+        font-size: 14px;
+        min-width: 18px;
+        text-align: center;
+    }
+
+    .cart-icon img {
+        width: 40px; /* Adjust the size of the cart icon */
+        height: auto;
+    }
+
+    .logout {
+        position: absolute;
+        top: 10px;
+        right: 0px;
+    }
+
+    .logout a {
+        display: inline-block;
+        padding: 10px 20px;
+        background-color: #1abc9c; /* Light teal background */
+        color: white;
+        text-decoration: none;
+        border-radius: 5px;
+        font-size: 14px;
+    }
+
+    .logout a:hover {
+        background-color: #16a085; /* Slightly darker teal on hover */
+    }
+
+    /* Table Styling */
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 20px;
+        background-color: white; /* White background for the table */
+        box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    th, td {
+        padding: 16px 20px;
+        text-align: left;
+        border: 1px solid #ddd;
+    }
+
+    th {
+        background-color: #f1f1f1; /* Light gray background for header */
+        color: #333; /* Dark text color for contrast */
+        font-weight: bold;
+    }
+
+    tr:nth-child(even) {
+        background-color: #fafafa; /* Light gray for even rows */
+    }
+
+    tr:hover {
+        background-color: #f0f0f0; /* Slightly darker gray on hover */
+    }
+
+    td {
+        color: #555;
+    }
+
+    td a {
+        display: inline-block;
+        padding: 8px 16px;
+        background-color: #1abc9c; /* Light teal button */
+        color: white;
+        text-decoration: none;
+        border-radius: 5px;
+        text-align: center;
+        font-weight: bold;
+    }
+
+    td a:hover {
+        background-color: #16a085; /* Darker teal on hover */
+    }
+
+    /* Button Styling */
+    .btn {
+        display: inline-block;
+        padding: 12px 24px;
+        background-color: #1abc9c; /* Light teal button */
+        color: white;
+        text-decoration: none;
+        border-radius: 5px;
+        text-align: center;
+        font-weight: bold;
+        transition: background-color 0.3s ease;
+    }
+
+    .btn:hover {
+        background-color: #16a085; /* Darker teal on hover */
+    }
+
+    /* Responsive design for smaller screens */
+    @media (max-width: 768px) {
+        table {
+            width: 100%;
+            font-size: 14px;
+        }
+
+        th, td {
+            padding: 12px;
+        }
+
+        .cart-icon img {
+            width: 30px;
+        }
+
+        .cart-count {
+            font-size: 12px;
+            top: -3px;
+            right: -3px;
+        }
+    }
+</style>
+
+<h2>{% trans "Welcome," %} {{ user.username }}!</h2>
+
+<!-- Display the cart icon with the number of items -->
+<div class="cart-icon">
+    <a href="{% url 'cart' %}">
+        <img src="{% static 'images/cart_icon.png' %}" alt="{% trans 'Cart' %}" />
+        <span class="cart-count">{{ cart_item_count }}</span>  <!-- Display cart count -->
+    </a>
+</div>
+
+<div class="logout">
+    <a href="{% url 'farmer_logout' %}" class="btn">{% trans "Logout" %}</a> <!-- Styled logout button -->
+</div>
+
+<h3>{% trans "Available Crops:" %}</h3>
+<table>
+    <thead>
+        <tr>
+            <th>{% trans "Crop Name" %}</th>
+            <th>{% trans "Farmer Name" %}</th>
+            <th>{% trans "Farmer Contact" %}</th>
+            <th>{% trans "Farmer Location" %}</th>
+            <th>{% trans "Price per kg (₹)" %}</th>
+            <th>{% trans "Quantity Available" %}</th>
+            <th>{% trans "Action" %}</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for crop in crops %}
+            <tr>
+                <td>{{ crop.crop_name }}</td>
+                <td>{{ crop.farmer_name }}</td>
+                <td>{{ crop.contact_number }}</td>
+                <td>{{ crop.city }}, {{ crop.state }}</td>
+                <td>₹{{ crop.price_per_kg|floatformat:2 }}</td>
+                <td>{{ crop.quantity_to_sell }} kg</td>
+                <td><a href="{% url 'add_to_cart' crop.id %}" class="btn">{% trans "Add to Cart" %}</a></td> <!-- Styled button for Add to Cart -->
+            </tr>
+        {% empty %}
+            <tr>
+                <td colspan="7">{% trans "No crops available." %}</td>
+            </tr>
+        {% endfor %}
+    </tbody>
+</table>

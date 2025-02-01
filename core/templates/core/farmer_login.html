@@ -1,0 +1,151 @@
+{% load static %}
+{% load i18n %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% trans "Farmer Login" %}</title>
+    <link rel="stylesheet" href="style.css">
+    {% load static %}
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            overflow-x: hidden;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            background: transparent;
+        }
+
+        /* Add video background */
+        .video-background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -1; /* Make sure video is behind other elements */
+        }
+
+        .card {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: rgba(255, 255, 255, 0.8); /* Transparent background */
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.2);
+            width: 300px;
+            text-align: center;
+            z-index: 1; /* Ensure login form is above the video */
+        }
+
+        .card h1 {
+            font-size: 2rem;
+            color: #4CAF50;
+            margin-bottom: 1.5rem;
+        }
+
+        .floating-label {
+            position: relative;
+            margin-bottom: 2rem;
+        }
+
+        .floating-label label {
+            position: absolute;
+            top: 12px;
+            left: 12px;
+            font-size: 1rem;
+            color: #888;
+            transition: all 0.2s ease;
+            pointer-events: none;
+        }
+
+        .floating-label input {
+            width: 100%;
+            padding: 1rem;
+            margin-bottom: 0.6rem;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-size: 1rem;
+            box-sizing: border-box;
+            transition: border 0.3s ease;
+        }
+
+        .floating-label input:focus {
+            border: 1px solid #4CAF50;
+        }
+
+        .floating-label input:focus + label,
+        .floating-label input:not(:placeholder-shown) + label {
+            top: 5px;
+            left: 10px;
+            font-size: 0.8rem;
+            color: #4CAF50;
+        }
+
+        button {
+            width: 100%;
+            padding: 1rem;
+            background: #4CAF50;
+            color: white;
+            font-size: 1.1rem;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        button:hover {
+            background: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <!-- Background video -->
+    <video class="video-background" autoplay loop muted>
+        <source src="{% static 'videos/WhatsApp Video 2025-01-02 at 12.38.22_b0666e11.mp4' %}" type="video/mp4">
+        {% trans "Your browser does not support the video tag." %}
+    </video>
+
+    <!-- Login form -->
+    <div class="card">
+        <h1>{% trans "Farmer Login" %}</h1>
+        <form method="POST" id="loginForm">
+            {% csrf_token %}
+            <div class="floating-label">
+                <input type="text" id="username" name="username" placeholder=" " required>
+                <label for="username">{% trans "Username" %}</label>
+            </div>
+            <div class="floating-label">
+                <input type="password" id="password" name="password" placeholder=" " required>
+                <label for="password">{% trans "Password" %}</label>
+            </div>
+            <button type="submit">{% trans "Login" %}</button>
+        </form>
+        <p>{% trans "Don't have an account?" %} <a href="/farmer/signup/">{% trans "Sign up here" %}</a></p>
+    </div>
+
+    <script>
+        const usernameInput = document.getElementById("username");
+        const loginForm = document.getElementById("loginForm");
+
+        loginForm.addEventListener("submit", function(e) {
+            if (usernameInput.value.length < 4) {
+                alert("{% trans 'Username must be at least 4 characters long!' %}");
+                e.preventDefault();
+            }
+        });
+    </script>
+</body>
+</html>

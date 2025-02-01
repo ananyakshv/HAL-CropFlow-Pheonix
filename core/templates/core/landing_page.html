@@ -1,0 +1,181 @@
+{% load static %}
+{% load i18n %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CROP FLOW</title>
+    {% load static %}
+    <style>
+        #google_translate_element {
+            font-size: 14px;
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            z-index: 9999;
+        }
+
+        .goog-te-banner-frame.skiptranslate {
+            display: none !important;
+        }
+
+        body {
+            top: 0px !important;
+        }
+
+        /* General Styles */
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background: url("{% static 'images/landing.avif' %}") no-repeat center center/cover;
+            color: #333;
+            text-align: center;
+            position: relative;
+            flex-direction: column;
+        }
+
+        /* Language Dropdown */
+        .language-selector {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 5px 10px;
+            border-radius: 5px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            z-index: 9999;
+        }
+
+        .language-selector select {
+            padding: 5px;
+            font-size: 1rem;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            animation: fadeInDown 1s ease;
+            color: #000;
+        }
+
+        h2 {
+            font-size: 1.8rem;
+            margin-bottom: 2rem;
+            animation: fadeInDown 1.5s ease;
+            color: #333;
+        }
+
+        /* Container */
+        .container {
+            background: rgba(255, 255, 255, 0.85);
+            padding: 2rem;
+            border-radius: 20px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+            width: 90%;
+            max-width: 400px;
+            animation: slideIn 1.2s ease;
+        }
+
+        /* Buttons */
+        button {
+            background: linear-gradient(45deg, #4caf50, #81c784);
+            color: #fff;
+            border: none;
+            padding: 1rem 2rem;
+            font-size: 1.1rem;
+            font-weight: bold;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin: 0.5rem 0;
+            width: 100%;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            transform: scale(1);
+        }
+
+        button:hover {
+            background: linear-gradient(45deg, #81c784, #4caf50);
+            transform: scale(1.1);
+        }
+
+        /* Media Queries */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.2rem;
+            }
+
+            h2 {
+                font-size: 1.5rem;
+            }
+
+            button {
+                font-size: 1rem;
+                padding: 0.8rem;
+            }
+        }
+
+        /* Animations */
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Language selection dropdown -->
+    <div class="language-selector">
+        <form action="{% url 'set_language' %}" method="get">
+            <select name="language" onchange="this.form.submit()">
+                <option value="LANGUAGE" {% if LANGUAGE_CODE == 'en' %}selected{% endif %}>LANGUAGE</option>
+                <option value="en" {% if LANGUAGE_CODE == 'en' %}selected{% endif %}>English</option>
+                <option value="hi" {% if LANGUAGE_CODE == 'hi' %}selected{% endif %}>Hindi</option>
+                <option value="kn" {% if LANGUAGE_CODE == 'kn' %}selected{% endif %}>Kannada</option>
+                <option value="ta" {% if LANGUAGE_CODE == 'ta' %}selected{% endif %}>Tamil</option>
+                <option value="te" {% if LANGUAGE_CODE == 'te' %}selected{% endif %}>Telugu</option>
+                <option value="ml" {% if LANGUAGE_CODE == 'ml' %}selected{% endif %}>Malayalam</option>
+            </select>
+        </form>
+    </div>
+
+    <div class="container">
+        {% load i18n %}
+
+        <h1>{% trans "Welcome to CROP FLOW" %}</h1>
+        <h2>{% trans "Are you a Farmer or a Customer?" %}</h2>
+        <form method="POST">
+            {% csrf_token %}
+            <button type="submit" name="user_type" value="farmer">{% trans "Farmer" %}</button>
+            <button type="submit" name="user_type" value="customer">{% trans "Customer" %}</button>
+        </form>
+    </div>
+</body>
+</html>

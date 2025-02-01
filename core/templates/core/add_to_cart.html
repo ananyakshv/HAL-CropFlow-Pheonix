@@ -1,0 +1,223 @@
+{% load static %}
+{% load i18n %}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{% trans "Add to Cart" %}</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            color: #333;
+            background-color: #f4f4f4;
+            overflow: hidden; /* Prevent scrolling */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh; /* Full viewport height */
+        }
+
+        .main-container {
+            display: flex;
+            width: 80%;
+            height: 80%;
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            overflow: hidden; /* Ensure the child containers look unified */
+        }
+
+        .content-container,
+        .image-container {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .content-container {
+            background-color: #ffffff; /* Optional for clarity */
+            flex-direction: column;
+        }
+
+        .content-container h1, .content-container h2 {
+            color: #4CAF50;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+
+        .content-container p {
+            font-size: 18px;
+            text-align: center;
+            margin: 10px 0;
+        }
+
+        form {
+            margin-top: 20px;
+        }
+
+        form .form-group {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 15px;
+        }
+
+        form .form-group label {
+            margin-right: 10px;
+            font-weight: bold;
+        }
+
+        form .form-group input[type="number"] {
+            width: 80px; /* Smaller input box */
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 14px;
+        }
+
+        button {
+            display: block;
+            width: 100px;
+            margin: 0 auto;
+            padding: 10px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        .image-container img {
+            max-width: 100%;
+            max-height: 90%;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+        }
+
+        .viewcart {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+        }
+
+        .viewcart a {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 14px;
+        }
+
+        .viewcart a:hover {
+            background-color: #45a049;
+        }
+
+        .back-to-dashboard {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+        }
+
+        .back-to-dashboard a {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 14px;
+        }
+
+        .back-to-dashboard a:hover {
+            background-color: #45a049;
+        }
+
+        #error-message {
+            color: red;
+            margin-top: 10px;
+            text-align: center;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .main-container {
+                flex-direction: column;
+                height: auto;
+                width: 95%;
+            }
+
+            .content-container {
+                padding: 15px;
+            }
+
+            .image-container {
+                margin-top: 15px;
+            }
+
+            .image-container img {
+                max-height: 200px;
+            }
+        }
+    </style>
+    <script>
+        function validateQuantity() {
+            const quantityInput = document.getElementById('quantity_requested');
+            const maxQuantity = parseInt(quantityInput.max);
+            const quantity = parseInt(quantityInput.value);
+            const errorMessage = document.getElementById('error-message');
+
+            if (quantity < 1 || quantity > maxQuantity) {
+                errorMessage.textContent = '{% trans "Please enter a valid quantity." %}';
+                return false;
+            }
+
+            errorMessage.textContent = '';
+            return true;
+        }
+    </script>
+</head>
+<body>
+    <div class="back-to-dashboard">
+        <a href="{% url 'customer_dashboard' %}">{% trans "Back to Dashboard" %}</a>
+    </div>
+
+    <div class="main-container">
+        <!-- Content Section -->
+        <div class="content-container">
+            <h1>{% trans "Add to Cart" %}</h1>
+            <p id="error-message"></p>
+            <h2>{{ crop.crop_name }}</h2>
+            <p>{% trans "Price per kg" %}: ₹{{ crop.price_per_kg }}</p>
+            <p>{% trans "Available Quantity" %}: {{ crop.quantity_to_sell }} kg</p>
+            <form method="POST" action="{% url 'add_to_cart' crop.id %}" onsubmit="return validateQuantity()">
+                {% csrf_token %}
+                <div class="form-group">
+                    <label for="quantity_requested">{% trans "Quantity (kg):" %}</label>
+                    <input type="number" id="quantity_requested" name="quantity_requested" min="1" max="{{ crop.quantity_to_sell }}" required>
+                </div>
+                <button type="submit">{% trans "Add to Cart" %}</button>
+            </form>
+        </div>
+
+        <!-- Image Section -->
+        <div class="image-container">
+            <img src="{% static 'images/cart_pic.jpeg'%}" alt="{% trans 'Cart Image' %}">
+        </div>
+    </div>
+
+    <div class="viewcart">
+        <a href="{% url 'cart' %}">{% trans "View Cart" %}</a>
+    </div>
+</body>
+</html>

@@ -1,0 +1,222 @@
+{% load static %}
+{% load i18n %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% trans "Farmer Dashboard" %}</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+            background: url("{% static 'images/farmdash.jpg' %}") no-repeat center center fixed;
+            background-size: cover;
+            color: #333;
+        }
+
+        .title-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            position: relative;
+        }
+
+        h1 {
+            text-align: center;
+            color: black;
+            flex-grow: 1;
+        }
+
+        .logout {
+            font-size: 1.2em;
+        }
+
+        .logout a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            background-color: #FF5733;
+            padding: 12px 20px;
+            border-radius: 5px;
+            font-size: 1.1em;
+            transition: background-color 0.3s ease;
+        }
+
+        .logout a:hover {
+            background-color: #FF4500;
+            text-decoration: underline;
+        }
+
+        .form-container {
+            display: flex;
+            justify-content: space-between;
+            margin: 0 auto;
+            width: 80%;
+            background-color: rgba(255, 255, 255, 0.8);
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .form-container .left,
+        .form-container .right {
+            width: 48%;
+        }
+
+        fieldset {
+            border: none;
+            margin-bottom: 15px;
+        }
+
+        legend {
+            font-size: 1.2em;
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: #4CAF50;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 10px;
+            font-weight: bold;
+            color: #333;
+        }
+
+        input[type="text"],
+        input[type="number"],
+        button {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 1em;
+        }
+
+        button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            background-color: rgba(255, 255, 255, 0.5); 
+            border-radius: 8px;
+            opacity: 0.9;
+        }
+
+        table, th, td {
+            border: 1px solid #ccc;
+        }
+
+        th, td {
+            text-align: left;
+            padding: 12px;
+            font-weight: bold; 
+            color: #333;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+        td {
+            background-color: transparent;
+        }
+
+        .error-message {
+    color: #FF6347; /* Bright red color */
+    font-weight: bold;
+    background-color: #FFDDC1; /* Light red background for contrast */
+    padding: 10px;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+
+    </style>
+</head>
+<body>
+
+<div class="title-container">
+    <h1>{% trans "Farmer Dashboard" %}</h1>
+    <!-- Logout Button beside the title -->
+    <div class="logout">
+        <a href="{% url 'farmer_logout' %}">{% trans "Logout" %}</a>
+    </div>
+</div>
+
+<form method="post">
+    {% csrf_token %}
+    <div class="form-container">
+        <!-- Crop Details (Left Side) -->
+        <div class="left">
+            <fieldset>
+                <legend>{% trans "Crop Details" %}</legend>
+                <label for="{{ form.crop_name.id_for_label }}">{% trans "Crop Name" %}</label>
+                {{ form.crop_name }}
+
+                <label for="{{ form.quantity.id_for_label }}">{% trans "Quantity (kg)" %}</label>
+                {{ form.quantity }}
+
+                <label for="{{ form.seeds_cost.id_for_label }}">{% trans "Seeds Cost (₹)" %}</label>
+                {{ form.seeds_cost }}
+
+                <label for="{{ form.fertilizers_cost.id_for_label }}">{% trans "Fertilizers Cost (₹)" %}</label>
+                {{ form.fertilizers_cost }}
+
+                <label for="{{ form.pesticides_cost.id_for_label }}">{% trans "Pesticides Cost (₹)" %}</label>
+                {{ form.pesticides_cost }}
+
+                <label for="{{ form.machinery_fuel_cost.id_for_label }}">{% trans "Machinery/Fuel Cost (₹)" %}</label>
+                {{ form.machinery_fuel_cost }}
+
+                <label for="{{ form.family_labor_cost.id_for_label }}">{% trans "Family/Unpaid Labor Cost (₹)" %}</label>
+                {{ form.family_labor_cost }}
+            </fieldset>
+        </div>
+
+        <!-- Farmer Details (Right Side) -->
+        <div class="right">
+            <fieldset>
+                <legend>{% trans "Farmer Details" %}</legend>
+                <label for="{{ form.farmer_name.id_for_label }}">{% trans "Farmer Name" %}</label>
+                {{ form.farmer_name }}
+                
+                <label for="{{ form.contact_number.id_for_label }}">{% trans "Contact Number" %}</label>
+                {{ form.contact_number }}
+                {% if form.contact_number.errors %}
+                    <div class="error-message">
+                        {% for error in form.contact_number.errors %}
+                            <p>{{ error }}</p>
+                        {% endfor %}
+                    </div>
+                {% endif %}
+                
+                <label for="{{ form.state.id_for_label }}">{% trans "State" %}</label>
+                {{ form.state }}
+                
+                <label for="{{ form.city.id_for_label }}">{% trans "City" %}</label>
+                {{ form.city }}
+            </fieldset>
+        </div>
+    </div>
+
+    <button type="submit">{% trans "Add Crop" %}</button>
+</form>
+
+
+</body>
+</html>

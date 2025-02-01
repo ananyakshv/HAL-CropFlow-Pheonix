@@ -1,0 +1,411 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-01-05 20:15+0530\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: ml\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: .\core\templates\core\add_to_cart.html:6
+#: .\core\templates\core\add_to_cart.html:197
+#: .\core\templates\core\add_to_cart.html:208
+#: .\core\templates\core\customer_dashboard.html:190
+msgid "Add to Cart"
+msgstr "കാർട്ടിലേക്ക് ചേർക്കുക"
+
+#: .\core\templates\core\add_to_cart.html:180
+msgid "Please enter a valid quantity."
+msgstr "ദയവായി സാധുവായ അളവ് നൽകുക"
+
+#: .\core\templates\core\add_to_cart.html:191
+#: .\core\templates\core\cart.html:175
+#: .\core\templates\core\direct_contact.html:246
+#: .\core\templates\core\online_payment.html:242
+msgid "Back to Dashboard"
+msgstr "കർഷക ഡാഷ്ബോർഡ്"
+
+#: .\core\templates\core\add_to_cart.html:200
+
+msgid "Price per kg"
+msgstr "പ്രതി കിലോ വില (₹)"
+
+#: .\core\templates\core\add_to_cart.html:201
+msgid "Available Quantity"
+msgstr "പാസ്വേഡ്"
+
+#: .\core\templates\core\add_to_cart.html:205
+
+msgid "Quantity (kg):"
+msgstr "തുകയ (കി.ഗ്രാ.)"
+
+
+
+#: .\core\templates\core\add_to_cart.html:219
+msgid "View Cart"
+msgstr "കാർട്ട് കാണുക"
+
+#: .\core\templates\core\cart.html:182
+msgid "Crop"
+msgstr "വിളവ്"
+
+#: .\core\templates\core\cart.html:183
+msgid "Quantity"
+msgstr "അളവ്"
+
+#: .\core\templates\core\cart.html:184
+msgid "Price (₹/kg)"
+msgstr "വില (₹/കി.ഗ്ര.)"
+
+#: .\core\templates\core\cart.html:185
+msgid "Total (₹)"
+msgstr "മൊത്തം (₹)"
+
+
+
+#: .\core\templates\core\cart.html:211
+msgid "Select Delivery Option:"
+msgstr "ഡെലിവറി ഓപ്ഷൻ തിരഞ്ഞെടുക്കുക:"
+
+#: .\core\templates\core\cart.html:216
+msgid "Please contact the farmer directly to complete the purchase."
+msgstr "വാങ്ങൽ പൂര്‍ത്തിയാക്കാൻ കര്‍ഷകനെ നേരിട്ട് ബന്ധപ്പെടുക."
+
+#: .\core\templates\core\cart.html:217
+msgid "Contact the farmer and pay directly"
+msgstr "കര്‍ഷകനെ ബന്ധപ്പെടുകയും നേരിട്ട് പണം അടയ്ക്കുകയും ചെയ്യുക"
+
+#: .\core\templates\core\cart.html:223
+msgid "You have selected online payment. Proceed to checkout to complete the payment."
+msgstr " നിങ്ങൾ ഓൺലൈനായി പണം അടയ്ക്കുന്നതായി തിരഞ്ഞെടുക്കു. പണം പൂരിപ്പിക്കാൻ ചെക്കൗട്ടിലേക്കു തുടരുക."
+
+#: .\core\templates\core\cart.html:224
+msgid "Pay online via farmer's contact number"
+msgstr "കര്‍ഷകന്റെ ബന്ധപ്പെടല്‍ നമ്പരിലൂടെ ഓൺലൈനായി പണം അടയ്ക്കുക"
+
+#: .\core\templates\core\cart.html:233
+msgid "Proceed to Checkout"
+msgstr "ചെക്കൗട്ടിലേക്കു തുടരുക"
+
+#: .\core\templates\core\cart.html:237
+msgid "Your cart is empty."
+msgstr "നിങ്ങളുടെ കാർട്ട് ദ്രവ്യവശമല്ല"
+
+#: .\core\templates\core\cart.html:256
+msgid "Please select a delivery option before proceeding."
+msgstr "ദയവായി തുടരുന്നതിന് മുൻപ് ഒരു ഡെലിവറി ഓപ്ഷൻ തിരഞ്ഞെടുക്കുക."
+
+
+
+msgid "Your Cart"
+msgstr "നിങ്ങളുടെ കാർട്ട്"
+
+
+#: .\core\templates\core\customer_dashboard.html:165
+#: .\core\templates\core\direct_contact.html:247
+#: .\core\templates\core\farmer_dashboard.html:147
+#: .\core\templates\core\online_payment.html:243
+msgid "Logout"
+msgstr "ലോഗ് ഔട്ട്"
+
+#: .\core\templates\core\customer_dashboard.html:168
+msgid "Available Crops:"
+msgstr "ലഭ്യമായ വിളകള്‍"
+
+#: .\core\templates\core\customer_dashboard.html:172
+#: .\core\templates\core\farmer_dashboard.html:158
+#: .\core\templates\core\farmer_dashboard.html:207
+msgid "Crop Name"
+msgstr "പടി പേര"
+
+#: .\core\templates\core\customer_dashboard.html:173
+#: .\core\templates\core\farmer_dashboard.html:185
+#: .\core\templates\core\farmer_dashboard.html:210
+msgid "Farmer Name"
+msgstr "കർഷകന്റെ പേര്"
+
+#: .\core\templates\core\customer_dashboard.html:174
+msgid "Farmer Contact"
+msgstr "കർഷക വിശദാംശങ്ങൾ"
+
+#: .\core\templates\core\customer_dashboard.html:175
+msgid "Farmer Location"
+msgstr "കർഷക വിശദാംശങ്ങൾ"
+
+#: .\core\templates\core\customer_dashboard.html:176
+#: .\core\templates\core\farmer_dashboard.html:209
+msgid "Price per kg (₹)"
+msgstr "പ്രതി കിലോ വില (₹)"
+
+#: .\core\templates\core\customer_dashboard.html:177
+msgid "Quantity Available"
+msgstr "പാസ്വേഡ്"
+
+#: .\core\templates\core\customer_dashboard.html:194
+#: .\core\templates\core\farmer_dashboard.html:229
+msgid "No crops available."
+msgstr "ഏതെങ്കിലും പടത്തുകൾ ഇല്ല."
+
+#: .\core\templates\core\customer_login.html:8
+#: .\core\templates\core\customer_login.html:121
+msgid "Customer Login"
+msgstr "ഉപഭോക്താവ്"
+
+
+#: .\core\templates\core\customer_login.html:125
+#: .\core\templates\core\customer_signup.html:5
+msgid "Username:"
+msgstr "ഉപയോക്തൃനാമം"
+
+#: .\core\templates\core\customer_login.html:129
+#: .\core\templates\core\customer_signup.html:7
+msgid "Password:"
+msgstr "പാസ്വേഡ്"
+
+#: .\core\templates\core\customer_login.html:132
+#: .\core\templates\core\customer_signup.html:11
+#: .\core\templates\core\farmer_login.html:134
+msgid "Login"
+msgstr "ലോഗിൻ"
+
+#: .\core\templates\core\customer_login.html:134
+#: .\core\templates\core\farmer_login.html:136
+msgid "Don't have an account?"
+msgstr "ഒരു അക്കൗണ്ട് ഇല്ലേ?"
+
+#: .\core\templates\core\customer_login.html:134
+#: .\core\templates\core\customer_signup.html:9
+#: .\core\templates\core\farmer_signup.html:95
+msgid "Sign Up"
+msgstr "സൈൻ അപ്പ്"
+
+#: .\core\templates\core\customer_signup.html:2
+msgid "Customer Signup"
+msgstr "ഉപഭോക്താവ്"
+
+#: .\core\templates\core\direct_contact.html:7
+#: .\core\templates\core\online_payment.html:7
+#: .\core\templates\core\online_payment.html:248
+msgid "Online Payment"
+msgstr " ഓൺലൈൻ പണം"
+
+#: .\core\templates\core\direct_contact.html:240
+#: .\core\templates\core\online_payment.html:236
+msgid "Thank You for Supporting Farmers!"
+msgstr "കര്‍ഷകങ്ങളെ പിന്തുണയ്ക്കുന്നതിന് നന്ദി!"
+
+#: .\core\templates\core\direct_contact.html:241
+#: .\core\templates\core\online_payment.html:237
+msgid "Your purchase directly contributes to improving farmers' livelihoods."
+msgstr "നിങ്ങളുടെ വാങ്ങലുകൾ കര്‍ഷകന്റെ ജീവിതശൈലി മെച്ചപ്പെടുത്താൻ നേരിട്ട് സംഭാവന ചെയ്യുന്നു."
+
+#: .\core\templates\core\direct_contact.html:252
+msgid "Contact Farmer"
+msgstr "സംസ്ഥാന ഫോൺ നമ്പർ"
+
+#: .\core\templates\core\direct_contact.html:255
+#: .\core\templates\core\online_payment.html:251
+msgid "Name:"
+msgstr "പേര്"
+
+#: .\core\templates\core\direct_contact.html:256
+#: .\core\templates\core\online_payment.html:252
+msgid "Phone:"
+msgstr "ഫോൺ"
+
+#: .\core\templates\core\direct_contact.html:257
+#: .\core\templates\core\online_payment.html:253
+msgid "City:"
+msgstr "നഗരം"
+
+
+#: .\core\templates\core\direct_contact.html:258
+#: .\core\templates\core\online_payment.html:254
+
+msgid "State:"
+msgstr "സംസ്ഥാനം"
+
+#: .\core\templates\core\direct_contact.html:259
+#: .\core\templates\core\online_payment.html:255
+msgid "Total Price:"
+msgstr " മൊത്തം വില"
+
+#: .\core\templates\core\direct_contact.html:260
+#: .\core\templates\core\online_payment.html:256
+msgid "Please proceed with the payment using the farmer's contact number above."
+msgstr "ദയവായി മേല്‍ പറയുന്ന കര്‍ഷകന്റെ ബന്ധപ്പെടല്‍ നമ്പരിലൂടെ പണം അടയ്‌ക്കുക"
+
+#: .\core\templates\core\direct_contact.html:262
+#: .\core\templates\core\online_payment.html:258
+msgid "Details not available at the moment."
+msgstr "സമയത്ത് വിവരങ്ങൾ ലഭ്യമായില്ല"
+
+#: .\core\templates\core\direct_contact.html:266
+msgid "Proceed"
+msgstr "തുടരുക"
+
+#: .\core\templates\core\direct_contact.html:271
+#: .\core\templates\core\online_payment.html:267
+msgid "Payment Successful!"
+msgstr "പേയ്മെന്റ് വിജയകരമായി!"
+
+#: .\core\templates\core\direct_contact.html:272
+#: .\core\templates\core\online_payment.html:268
+msgid "Your payment has been received. Thank you for your support!"
+msgstr "നിങ്ങളുടെ പേയ്മെന്റ് സ്വീകരിച്ചു. നിങ്ങളുടെ പിന്തുണയ്ക്കു നന്ദി!"
+
+#: .\core\templates\core\direct_contact.html:273
+#: .\core\templates\core\online_payment.html:269
+msgid "Close"
+msgstr "അടയ്ക്കുക"
+
+#: .\core\templates\core\farmer_dashboard.html:8
+#: .\core\templates\core\farmer_dashboard.html:144
+msgid "Farmer Dashboard"
+msgstr "കർഷക ഡാഷ്ബോർഡ്"
+
+#: .\core\templates\core\farmer_dashboard.html:157
+msgid "Crop Details"
+msgstr "പടത്തിൻ്റെ വിശദാംശങ്ങൾ"
+
+#: .\core\templates\core\farmer_dashboard.html:161
+msgid "Quantity (kg)"
+msgstr "തുകയ (കി.ഗ്രാ.)"
+
+#: .\core\templates\core\farmer_dashboard.html:164
+msgid "Seeds Cost (₹)"
+msgstr "ബീജങ്ങളുടെ വില (₹)"
+
+#: .\core\templates\core\farmer_dashboard.html:167
+msgid "Fertilizers Cost (₹)"
+msgstr "അന്ധജങ്ങളുടെ വില (₹)"
+
+#: .\core\templates\core\farmer_dashboard.html:170
+msgid "Pesticides Cost (₹)"
+msgstr "പესტിസൈഡുകളുടെ വില (₹)"
+
+#: .\core\templates\core\farmer_dashboard.html:173
+msgid "Machinery/Fuel Cost (₹)"
+msgstr "യന്ത്ര/ഇന്ധനങ്ങളുടെ വില (₹)"
+
+#: .\core\templates\core\farmer_dashboard.html:176
+msgid "Family/Unpaid Labor Cost (₹)"
+msgstr "കുടുംബ/അർഹമായ ശ്രമത്തിന്റെ വില (₹)"
+
+#: .\core\templates\core\farmer_dashboard.html:184
+msgid "Farmer Details"
+msgstr "കർഷക വിശദാംശങ്ങൾ"
+
+#: .\core\templates\core\farmer_dashboard.html:188
+#: .\core\templates\core\farmer_dashboard.html:211
+#: .\core\templates\core\farmer_signup.html:92
+msgid "Contact Number"
+msgstr "സംസ്ഥാന ഫോൺ നമ്പർ"
+
+#: .\core\templates\core\farmer_dashboard.html:191
+#: .\core\templates\core\farmer_dashboard.html:212
+#: .\core\templates\core\farmer_signup.html:93
+msgid "State"
+msgstr "സംസ്ഥാനം"
+
+#: .\core\templates\core\farmer_dashboard.html:194
+#: .\core\templates\core\farmer_dashboard.html:213
+#: .\core\templates\core\farmer_signup.html:94
+msgid "City"
+msgstr "നഗരം"
+
+#: .\core\templates\core\farmer_dashboard.html:200
+msgid "Add Crop"
+msgstr "പടി ചേർക്കുക"
+
+#: .\core\templates\core\farmer_dashboard.html:203
+msgid "Added Crops"
+msgstr "ചേർത്ത പടത്തുകൾ"
+
+#: .\core\templates\core\farmer_dashboard.html:208
+msgid "MSP (₹)"
+msgstr "MSP (₹)"
+
+#: .\core\templates\core\farmer_login.html:8
+#: .\core\templates\core\farmer_login.html:123
+msgid "Farmer Login"
+msgstr "കർഷകൻ"
+
+#: .\core\templates\core\farmer_login.html:128
+#: .\core\templates\core\farmer_signup.html:89
+msgid "Username"
+msgstr "ഉപയോക്തൃനാമം"
+
+
+
+#: .\core\templates\core\farmer_login.html:136
+msgid "Sign up here"
+msgstr "ഇവിടെ സൈൻ അപ്പ് ചെയ്യുക"
+
+
+#: .\core\templates\core\farmer_signup.html:7
+#: .\core\templates\core\farmer_signup.html:86
+msgid "Farmer Signup"
+msgstr "കർഷകൻ"
+
+#: .\core\templates\core\farmer_signup.html:91
+msgid "Confirm Password"
+msgstr "പാസ്വേഡ് സ്ഥിരീകരിക്കുക"
+
+#: .\core\templates\core\farmer_signup.html:97
+msgid "Already have an account?"
+msgstr "ഇതിന് മുമ്പ് അക്കൗണ്ട് ഉണ്ടോ?"
+
+#: .\core\templates\core\farmer_signup.html:97
+msgid "Login here"
+msgstr "ഇവിടെ ലോഗിൻ ചെയ്യുക"
+
+#: .\core\templates\core\landing_page.html:153
+msgid "Welcome to AGRI-DIRECT"
+msgstr "AGRI-DIRECT ൽ സ്വാഗതം"
+
+#: .\core\templates\core\landing_page.html:154
+msgid "Are you a Farmer or a Customer?"
+msgstr "നിങ്ങൾ ഒരു കർഷകനോ ഉപഭോക്താവോ?"
+
+#: .\core\templates\core\landing_page.html:157
+msgid "Farmer"
+msgstr "കർഷകൻ"
+
+#: .\core\templates\core\landing_page.html:158
+msgid "Customer"
+msgstr "ഉപഭോക്താവ്"
+
+#: .\core\templates\core\online_payment.html:262
+msgid "Proceed with Payment"
+msgstr "പണമടയ്‌ക്കുക"
+
+#~ msgid "English"
+#~ msgstr "ഇംഗ്ലീഷ്"
+
+#~ msgid "Hindi"
+#~ msgstr "ഹിന്ദി"
+
+#~ msgid "Kannada"
+#~ msgstr "കന്നഡ"
+
+#~ msgid "Tamil"
+#~ msgstr "തമിഴ്"
+
+#~ msgid "Malayalam"
+#~ msgstr "മല്യാളം"
+
+#~ msgid "Telugu"
+#~ msgstr "తెలుగు"
+
