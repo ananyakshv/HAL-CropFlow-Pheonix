@@ -120,7 +120,13 @@
 
     <!-- Login form -->
     <div class="card">
+        
         <h1>{% trans "Farmer Login" %}</h1>
+        <div>
+            {% for message in messages %}
+                <p style="color: red;">{{ message }}</p>
+            {% endfor %}
+        </div>
         <form method="POST" id="loginForm">
             {% csrf_token %}
             <div class="floating-label">
@@ -132,6 +138,10 @@
                 <label for="password">{% trans "Password" %}</label>
             </div>
             <button type="submit">{% trans "Login" %}</button>
+            {% if messages %}
+    
+{% endif %}
+
         </form>
         <p>{% trans "Don't have an account?" %} <a href="/farmer/signup/">{% trans "Sign up here" %}</a></p>
     </div>

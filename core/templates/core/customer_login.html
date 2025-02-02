@@ -120,6 +120,14 @@
     <div class="form-container">
         <h2>{% trans "Customer Login" %}</h2>
         <form method="post">
+            {% if messages %}
+    <div>
+        {% for message in messages %}
+            <p style="background-color: rgba(250, 5, 5, 0.7); color: white; padding: 10px; border-radius: 5px; margin-bottom: 10px; text-align: center;">{{ message }}</p>
+        {% endfor %}
+    </div>
+{% endif %}
+
             {% csrf_token %}
             <div class="input-group">
                 <label for="username">{% trans "Username:" %}</label>

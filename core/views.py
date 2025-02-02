@@ -81,12 +81,18 @@ def customer_login(request):
     if request.method == 'POST':
         username = request.POST['username']
         password = request.POST['password']
-        user = authenticate(request, username=username, password=password)
-        if user is not None:
-            login(request, user)
-            return redirect('customer_dashboard')
+
+        # Check if the username exists
+        if not User.objects.filter(username=username).exists():
+            messages.error(request, "Username not registered")
         else:
-            messages.error(request, "Invalid username or password.")
+            user = authenticate(request, username=username, password=password)
+            if user is not None:
+                login(request, user)
+                return redirect('customer_dashboard')
+            else:
+                messages.error(request, "Incorrect password")
+
     return render(request, 'core/customer_login.html')
 
 # Logout View
@@ -151,16 +157,24 @@ def farmer_dashboard(request):
 
     return render(request, 'core/farmer_dashboard.html', {'form': form, 'crops': crops})
 
+from django.contrib.auth.models import User  # Import User model
+
 def farmer_login(request):
     if request.method == "POST":
         username = request.POST['username']
         password = request.POST['password']
-        user = authenticate(request, username=username, password=password)
-        if user is not None:
-            login(request, user)
-            return redirect('farmer_dashboard')
+        
+        # Check if username exists
+        if not User.objects.filter(username=username).exists():
+            messages.error(request, 'Username not registered')
         else:
-            messages.error(request, 'Invalid username or password')
+            user = authenticate(request, username=username, password=password)
+            if user is not None:
+                login(request, user)
+                return redirect('farmer_dashboard')
+            else:
+                messages.error(request, 'Invalid password')
+
     return render(request, 'core/farmer_login.html')
 
 from .models import FarmerProfile
@@ -196,34 +210,6 @@ def farmer_logout(request):
     return redirect('landing_page')
 
 
-'''def add_crop(request):
-    if request.method == "POST":
-        form = CropInputForm(request.POST)
-        if form.is_valid():
-            # Ensure the crop is tied to the logged-in farmer
-            crop = form.save(commit=False)
-            crop.user = request.user  # Assign logged-in user as the crop owner
-            
-            # Calculate A2 + FL and MSP
-            a2_fl_cost = (
-                form.cleaned_data['seeds_cost'] +
-                form.cleaned_data['fertilizers_cost'] +
-                form.cleaned_data['pesticides_cost'] +
-                form.cleaned_data['machinery_fuel_cost'] +
-                form.cleaned_data['family_labor_cost']
-            )
-            msp = a2_fl_cost * 1.5  # MSP Calculation
-            price_per_kg = msp / form.cleaned_data['quantity']  # Calculate price per kg
-            
-            # Save calculated values to the crop object
-            crop.msp = msp
-            crop.price_per_kg = price_per_kg
-            crop.save()  # Save the crop instance
-            
-            return redirect('farmer_dashboard')  # Redirect after successful addition
-    else:
-        form = CropInputForm()
-    return render(request, 'core/add_crop.html', {'form': form})'''
 from django.shortcuts import render, redirect
 from .forms import CropForm
 from .models import Crop
