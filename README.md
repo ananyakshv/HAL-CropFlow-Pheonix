@@ -3,7 +3,7 @@
 Connecting Farmers & Customers for Fair Trade
 
 🚀 About the Project
-Crop Flow is a web application designed to bridge the gap between farmers and customers by enabling direct transactions. It ensures that farmers receive fair prices for their produce while providing customers with fresh, quality crops.
+Crop Flow is a web application designed to bridge the gap between farmers and customers by enabling direct transactions. It ensures that farmers receive fair prices for their produce while providing customers with fresh, quality crops using MSP(Minimum Support Price), and multiplied with 1.5 .
 
 🔥 Features
 - Farmer Portal  
