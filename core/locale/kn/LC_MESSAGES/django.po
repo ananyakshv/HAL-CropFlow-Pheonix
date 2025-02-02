@@ -357,8 +357,8 @@ msgid "Login here"
 msgstr "ಇಲ್ಲಿ ಲಾಗಿನ್ ಮಾಡಿ"
 
 #: .\core\templates\core\landing_page.html:153
-msgid "Welcome to AGRI-DIRECT"
-msgstr "AGRI-DIRECT ಗೆ ಸ್ವಾಗತ"
+msgid "Welcome to CROP FLOW"
+msgstr "CROP FLOW ಗೆ ಸ್ವಾಗತ"
 
 #: .\core\templates\core\landing_page.html:154
 msgid "Are you a Farmer or a Customer?"
